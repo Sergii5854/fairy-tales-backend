@@ -1,0 +1,21 @@
+{
+  "name": "fairy-tails",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JS7 team",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "firebase": "^3.6.4",
+    "firebase-admin": "^4.0.4",
+    "fs": "*",
+    "http": "0.0.0",
+    "os": "^0.1.1",
+    "require": "^2.4.20"
+  },
+  "devDependencies": {},
+  "description": ""
+}
