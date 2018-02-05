@@ -29,8 +29,7 @@
     Tales of the Childhood is a collection of folk and author fairy tales in text and
     audio formats exclusively in Ukrainian.
     Easy navigation and the search for the fairy tale you want!
-    Constant expansion of the base and moderation of fairy tales!
-    
+    Constant expansion of the base and moderation of fairy tales!    
     
     Audio tags can be played instantly online through the player's built-in app,
     or download them to your device and enable it without access to the internet at any time.
@@ -47,8 +46,7 @@
     simple and cognitive stories of fairy tales characters.
     
     If you have not found your favorite tale - write us and we will make every effort to get you the closest
-    sometimes she appeared in the app!
-    
+    sometimes she appeared in the app!    
 
 ###  Description  UA       
 
