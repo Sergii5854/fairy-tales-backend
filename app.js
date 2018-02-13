@@ -5,31 +5,30 @@ var app = express();
 
 var http = require('http');
 var https = require("https");
-var firebase = require("firebase");
-var admin = require("firebase-admin");
 
-const config = require('./config')
-// const todo = require('./todo/todo')
-//
-var db =  require('./api/data/db');
 
+const config = require('./config');
+// const router = require('./api/router')
+
+var db = require('./api/data/db');
+// var db = require('./api/db');
 app.listen(config.port, function () {
   console.log(`Server running at port: ${config.port}`)
 });
 
-// app.use(bodyParser.json())
-//
-// app.use('/api/v1', todo)
+// app.use(bodyParser.json());
+
+// app.use('/api/v1', router);
 
 // error handling
 app.use(function (req, res, next) {
-  const err = new Error(`Not Found ${req.path}`)
-  err.status = 404
+  const err = new Error(`Not Found ${req.path}`);
+  err.status = 404;
   next(err)
 });
 app.use(function (error, req, res, next) {
   if (error) {
-    console.log(error)
+    console.log(error);
     return res.status(400).json({error})
   }
   next(error)
@@ -41,6 +40,7 @@ app.use(function (err, req, res, next) {
     error: {}
   })
 });
+
 
 
 

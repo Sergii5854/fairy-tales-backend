@@ -15,7 +15,8 @@
     "fs": "*",
     "http": "0.0.0",
     "os": "^0.1.1",
-    "require": "^2.4.20"
+    "require": "^2.4.20",
+    "mongoose": "^5.0.4"
   },
   "devDependencies": {
     "nodemon": "^1.14.12"
