@@ -8,7 +8,7 @@ var ref = firebase.app().database().ref();
 
 
 var tailsRef = ref.child('talesList');
-// console.log(tailsRef);
+ console.log("1  ",tailsRef);
 
 router.get('/all', function (req, res, next) {
     console.log(tailsRef);
