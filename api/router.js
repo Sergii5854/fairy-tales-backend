@@ -4,17 +4,11 @@ const fairyTale = require('./model');
 
 const router = express.Router();
 
-
-
-
 router.get('/all', (req, res, next) => {
     fairyTale.find({})
-        .sort('-createdAt')
-        .limit(10)
-        .then(all => {
-            res.json({all})
-        })
-        .catch(next)
+        .then(function (fairyTales) {
+            res.json({fairyTales})
+        }).catch(next)
 })
 
 
