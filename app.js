@@ -8,7 +8,7 @@ var https = require("https");
 
 
 const config = require('./config');
-// const router = require('./api/router')
+const router = require('./api/router');
 
 var db = require('./api/data/db');
 // var db = require('./api/db');
@@ -18,7 +18,7 @@ app.listen(config.port, function () {
 
 // app.use(bodyParser.json());
 
-// app.use('/api/v1', router);
+app.use('/api/v1', router);
 
 // error handling
 app.use(function (req, res, next) {
