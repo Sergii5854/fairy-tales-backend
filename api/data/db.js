@@ -11,8 +11,8 @@ var ref = firebase.app().database().ref();
 var usersRef = ref.child('users');
 
 var tailsRef = ref.child('talesList');
-console.log(tailsRef);
-;
+// console.log(tailsRef);
+
 tailsRef.orderByKey().on('child_added', function (data) {
     console.log(data.getKey(), data.val().name);
 });

@@ -6,9 +6,12 @@ const router = express.Router();
 
 router.get('/all', function (req, res, next) {
     fairyTale.find({})
-        .then(function (fairyTales) {
-            res.json({fairyTales})
-        }).catch(next)
+        .sort('-createdAt')
+        .limit(10)
+        .then(tails => {
+            res.json({tails})
+        })
+        .catch(next)
 })
 
 
