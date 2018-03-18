@@ -5,10 +5,10 @@ const fairyTale = require('./model');
 const router = express.Router();
 
 router.get('/all', function (req, res, next) {
-    console.log("all rout")
-    functionThatUsesFirebase(req.params.id);
-
-    res.send(req.params.id);
+    fairyTale.find({})
+        .then(function (fairyTales) {
+            res.json({fairyTales})
+        }).catch(next)
 })
 
 
