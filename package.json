@@ -14,9 +14,10 @@
     "firebase-admin": "^4.0.4",
     "fs": "*",
     "http": "0.0.0",
+    "mongoose": "^5.0.4",
+    "nodemon": "^1.17.2",
     "os": "^0.1.1",
-    "require": "^2.4.20",
-    "mongoose": "^5.0.4"
+    "require": "^2.4.20"
   },
   "devDependencies": {
     "nodemon": "^1.14.12"
