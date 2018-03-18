@@ -11,8 +11,8 @@ router.get('/all', (req, res, next) => {
     fairyTale.find({})
         .sort('-createdAt')
         .limit(10)
-        .then(data => {
-            res.json({data})
+        .then(all => {
+            res.json({all})
         })
         .catch(next)
 })

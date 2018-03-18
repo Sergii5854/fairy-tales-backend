@@ -1,10 +1,6 @@
 var express = require('express');
-var bodyParser = require('body-parser')
 var path = require('path')
 var app = express();
-
-var http = require('http');
-var https = require("https");
 
 
 const config = require('./config');
@@ -16,7 +12,6 @@ app.listen(config.port, function () {
   console.log(`Server running at port: ${config.port}`)
 });
 
-// app.use(bodyParser.json());
 
 app.use('/api/v1', router);
 
