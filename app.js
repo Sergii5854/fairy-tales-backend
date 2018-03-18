@@ -10,8 +10,8 @@ var https = require("https");
 const config = require('./config');
 const router = require('./api/router');
 
-var db = require('./api/data/db');
-// var db = require('./api/db');
+// var db = require('./api/data/db');
+var db = require('./api/db');
 app.listen(config.port, function () {
   console.log(`Server running at port: ${config.port}`)
 });
