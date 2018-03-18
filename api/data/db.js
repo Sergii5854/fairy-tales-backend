@@ -14,7 +14,7 @@ var tailsRef = ref.child('talesList');
 // console.log(tailsRef);
 
 tailsRef.orderByKey().on('child_added', function (data) {
-    console.log(data.getKey(), data.val().name);
+    // console.log(data.getKey(), data.val().name);
 });
 
 

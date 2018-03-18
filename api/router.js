@@ -4,14 +4,14 @@ const fairyTale = require('./model');
 
 const router = express.Router();
 
+var ref = firebase.app().database().ref();
+
+
+var tailsRef = ref.child('talesList');
+// console.log(tailsRef);
+
 router.get('/all', function (req, res, next) {
-    fairyTale.find({})
-        .sort('-createdAt')
-        .limit(10)
-        .then(tails => {
-            res.json({tails})
-        })
-        .catch(next)
+    console.log(tailsRef);
 })
 
 
