@@ -1,5 +1,5 @@
 var firebase = require('firebase');
-var serviceAccount = require("./../../fireBaseKey/fairy-tales-kay.json");
+var serviceAccount = require("../../fireBaseKey/fairy-tales-kay.json");
 var express = require('express');
 var router = express.Router();
 firebase.initializeApp({
