@@ -1,3 +1,6 @@
+const express = require('express');
+const fairyTale = require('./../model');
+const router = express.Router();
 
 router.get('/folk', (req, res, next) => {
     fairyTale.find({})

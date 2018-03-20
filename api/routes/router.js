@@ -2,12 +2,12 @@ const express = require('express');
 const fairyTale = require('./../model');
 const router = express.Router();
 
-const audio = require('./audio');
-const author = require('./author');
-const favorite = require('./favorite');
-const folk = require('./folk');
-const lullabies = require('./lullabies');
-const recentUploaded = require('./recent-uploaded');
+require('./audio');
+require('./author');
+ require('./favorite');
+require('./folk');
+require('./lullabies');
+require('./recent-uploaded');
 
 
 router.get('/fairytales', (req, res, next) => {
@@ -56,11 +56,11 @@ router.delete('/fairytales/:id', function (req, res) {
     })
 });
 
-audio;
-author;
-favorite;
-folk;
-lullabies;
-recentUploaded;
+// audio;
+// author;
+// favorite;
+// folk;
+// lullabies;
+// recentUploaded;
 
 module.exports = router
