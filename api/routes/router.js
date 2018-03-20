@@ -2,12 +2,12 @@ const express = require('express');
 const fairyTale = require('./../model');
 const router = express.Router();
 
-const audio = require('./audio')
-const author = require('./author')
-const favorite = require('./favorite')
-const folk = require('./folk')
-const lullabies = require('./lullabies')
-const RecentUploaded = require('./recent-uploaded')
+const audio = require('./audio');
+const author = require('./author');
+const favorite = require('./favorite');
+const folk = require('./folk');
+const lullabies = require('./lullabies');
+const recentUploaded = require('./recent-uploaded');
 
 
 router.get('/fairytales', (req, res, next) => {
@@ -56,20 +56,11 @@ router.delete('/fairytales/:id', function (req, res) {
     })
 });
 
-router.get('/audio-fairy-tales', (req, res, next) => {
-    fairyTale.find({})
-        .then(function (audioFairyTales) {
-            res.json({audioFairyTales})
-        }).catch(next)
-})
-
-router.get('/audio-fairy-tales/:id', (req, res, next) => {
-    fairyTale.find({})
-        .then(function (audioFairyTales) {
-            res.json({audioFairyTales})
-        }).catch(next)
-});
-
-
+audio;
+author;
+favorite;
+folk;
+lullabies;
+recentUploaded;
 
 module.exports = router
