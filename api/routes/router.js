@@ -1,5 +1,14 @@
 const express = require('express');
-const fairyTale = require('./model');
+const fairyTale = require('./../model');
+
+const audio = require('./audio')
+const author = require('./author')
+const favorite = require('./favorite')
+const folk = require('./folk')
+const lullabies = require('./lullabies')
+const RecentUploaded = require('./recent-uploaded')
+
+
 const router = express.Router();
 
 router.get('/fairytales', (req, res, next) => {
@@ -50,4 +59,3 @@ router.delete('/fairytales/:id', function (req, res) {
 
 
 module.exports = router
-
