@@ -20,10 +20,11 @@ router.get('/fairytales', (req, res, next) => {
 
 
 router.post('/fairytales', function (req, res, next) {
-    new fairyTale(req.body.fairyTale)
+
+    new fairyTale(req.body.fairyTales)
         .save()
-        .then(function (fairyTale) {
-            res.json({fairyTale})
+        .then(function (fairyTales) {
+            res.json({fairyTales})
         })
         .catch(next)
 });
