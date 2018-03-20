@@ -20,7 +20,7 @@ app.listen(config.port, function () {
 
 app.use('/api/v1', router);
 // app.use('/api/v1', audio);
-app.use('/api/v1', author);
+// app.use('/api/v1', author);
 // app.use('/api/v1', favorite);
 // app.use('/api/v1', folk);
 // app.use('/api/v1', lullabies);
