@@ -4,7 +4,7 @@ const router = express.Router();
 
 require('./audio');
 require('./author');
- require('./favorite');
+require('./favorite');
 require('./folk');
 require('./lullabies');
 require('./recent-uploaded');
@@ -56,11 +56,71 @@ router.delete('/fairytales/:id', function (req, res) {
     })
 });
 
-// audio;
-// author;
-// favorite;
-// folk;
-// lullabies;
-// recentUploaded;
+// audio-fairy-tales
+
+router.get('/audio-fairy-tales', (req, res, next) => {
+    fairyTale.find({})
+        .then(function (audioFairyTales) {
+            res.json({audioFairyTales})
+        }).catch(next)
+})
+
+router.get('/audio-fairy-tales/:id', (req, res, next) => {
+    fairyTale.find({})
+        .then(function (audioFairyTales) {
+            res.json({audioFairyTales})
+        }).catch(next)
+});
+
+
+//author
+router.get('/author', (req, res, next) => {
+    fairyTale.find({})
+        .then(function (authors) {
+            res.json({authors})
+        }).catch(next)
+})
+
+router.get('/author/:id', (req, res, next) => {
+    fairyTale.find({})
+        .then(function (authors) {
+            res.json({authors})
+        }).catch(next)
+});
+
+//folk
+
+router.get('/folk', (req, res, next) => {
+    fairyTale.find({})
+        .then(function (folkFairyTales) {
+            res.json({folkFairyTales})
+        }).catch(next)
+})
+
+router.get('/folk/:id', (req, res, next) => {
+    fairyTale.find({})
+        .then(function (folkFairyTales) {
+            res.json({folkFairyTales})
+        }).catch(next)
+});
+// lullabies
+router.get('/lullabies', (req, res, next) => {
+    fairyTale.find({})
+        .then(function (lullabiesFairyTales) {
+            res.json({lullabiesFairyTales})
+        }).catch(next)
+})
+
+router.get('/lullabies/:id', (req, res, next) => {
+    fairyTale.find({})
+        .then(function (lullabiesFairyTales) {
+            res.json({lullabiesFairyTales})
+        }).catch(next)
+});
+
+
+
+
+
 
 module.exports = router

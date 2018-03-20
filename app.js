@@ -1,11 +1,11 @@
-var express = require('express');
-var path = require('path')
-var app = express();
+const express = require('express');
+const path = require('path')
+const app = express();
 
 const config = require('./config');
 const router = require('./api/routes/router');
 
-var db = require('./api/db');
+const db = require('./api/db');
 app.listen(config.port, function () {
   console.log(`Server running at port: ${config.port}`)
 });
@@ -32,5 +32,8 @@ app.use(function (err, req, res, next) {
     error: {}
   })
 });
+
+
+
 
 module.exports = app;
