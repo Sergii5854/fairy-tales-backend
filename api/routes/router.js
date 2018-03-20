@@ -2,12 +2,12 @@ const express = require('express');
 const fairyTale = require('./../model');
 const router = express.Router();
 
-require('./audio');
-require('./author');
-require('./favorite');
-require('./folk');
-require('./lullabies');
-require('./recent-uploaded');
+// require('./audio');
+// require('./author');
+// require('./favorite');
+// require('./folk');
+// require('./lullabies');
+// require('./recent-uploaded');
 
 
 router.get('/fairytales', (req, res, next) => {
