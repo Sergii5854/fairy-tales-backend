@@ -17,4 +17,4 @@ author.get('/author/:id', (req, res, next) => {
       }).catch(next)
 });
 
-module.exports = author
+ module.exports = author
