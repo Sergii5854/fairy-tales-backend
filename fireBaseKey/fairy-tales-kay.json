@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "fairy-tales-d7dde",
+  "private_key_id": "44670cb4b7d606dc6d881fd0ace9c09e0c34adc8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCqCu9GsHam/K4G\n1wh6DYCE40X00FKCd+6V/8hYbpdrHLJBvMhfhCyMfMot4yN22Z6AcYxbAcu23AoF\nsu8a/Sol2n6iwoPUS6cbTzyHErc0qA7Za2bquvJZvd8iZ1XC6lZhsolj2VBgabNr\nAo2xUmXnxLBA+meGO0YVvVHnPAnAiQhaZoc7+Zgp013wUHO4dchUqAWzEEvOp1MU\nKFFiDqrEVrB6F6STxQsMpw4+M8z3DGnnqr7sEFEHK6yWJwTs5BJuTi4KdAF5+CZZ\nCyrS4Nab4bJpSnAYs3sJxZS8bKHUSEXJcfN4BFxbCMuabCnc2J9WqLQpb9mhEBtv\nXr3tJ7HnAgMBAAECggEAN3KyXLgtML2jl9plyrr9ZhfgV3jY9u9ZzvLl5yRE3uow\nHGyNYEwu5K7KlNUE2vwSieq87G40+g9de0dCXegg5tANTFCmgUMcHjUj1R3evN5y\nXSZ/HFrSrT3TdZoBproYaeo4j+UspwvAtEvUXXazgTSrjry4plZMv8kI3KDAw1XD\nVo/CwpJ4oTaOuFhWrc2jz4CYprvYNHOGak5VckDlOyt7N7EhgdYCGNQveb+aDzVQ\n72bjUD/j+zIfyDHD4mF/I9F8kMmhLR1z8qEz+kuwKFWHgiCsBAQpfHRJKn3qwuUO\n6ypTh18BtvPMeVTowmJHzz0bskLIaoQAN0XUerPtsQKBgQDkBGCFV/pFE7rrVFAA\ncDgCL3aKhCnneq46cm8UGRb2M3dio1/shTQk4OBGVvKpdkrJfOv2bYTvYuZb+bj8\nZP6FAjzWy1iAWr6bJSLqBpOVnvt+hV0knEa0MA6eQoy6yIikXSicMVy8A0r6bN3w\nXSwkTYQX+UJcPnAjfmcFg+P50QKBgQC+6SyFvaxg7pYJpj/LsUU/Y+3Z5fJ2LGKf\nOat9haZX4GlBz0MwiZLSkzmRNqIbJlhphqcaleze7KQzq/E1uGnhMDyIb36rBaRN\nD158YFNt/kM6gD2NpoeION+nitFvR+LNs3/eGs+NP52HOq4bIMxuwDoekhPPdnIC\nAB7mrJgmNwKBgEkSBgR1XySH4BzOFh0t2SUKJMja9brSm8brKSGdsLgRYi7gADuB\nrGYtEnI4Juebmvfa6ps8GZ/FZ+ENs/ReQRpKz0hePexUKET7r6ajmOQX4Kx4/JJg\n6l+QDv80gHjTDsbte7giMX+m5n4+KRmAIkc3+B7eqB97euBE/6rKy2IhAoGATxXv\nMLQjTcBofTTWpr4X7qup46NjbtryO/268fPEthCr6ew/bEMBhKQiq+pS+yZGZ+i1\nHslO6AZl+1XWRafQjM3btbViZtyedKHSRXnt9dnn5bssRJrg+Gh/FjvmiM/hv88F\nQHAg3OWmj1eaung62AJf0Tw4YrAxiGyeYHbNTL8CgYBHZakZto4Z8gfKwv7Id/b/\nixhgQrhuUtrFqngwpr2v67nYaUpR+MXA4+0amndIZayRcOsg+ifmX7ZWNDxwpyJw\nNRGOd3/FrmYvfWEtRfBneDeWjInQ3vLWgEqgfO6MdrHz3hhZ7uoQmk5yKZq4ZIsL\no0x4OzPE/hKCs6GcC6osZw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-6wcaj@fairy-tales-d7dde.iam.gserviceaccount.com",
+  "client_id": "109668025369300613799",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-6wcaj%40fairy-tales-d7dde.iam.gserviceaccount.com"
+}
