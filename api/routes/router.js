@@ -12,8 +12,8 @@ const router = express.Router();
 
 router.get('/fairytales', (req, res, next) => {
     fairyTale.find({})
-        .then(function (fairyTales) {
-            res.json({fairyTales})
+        .then(function (fairytales) {
+            res.json({fairytales})
         }).catch(next)
 });
 
