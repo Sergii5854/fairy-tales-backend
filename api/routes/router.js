@@ -15,15 +15,14 @@ router.get('/fairytales', (req, res, next) => {
         .then(function (fairyTales) {
             res.json({fairyTales})
         }).catch(next)
-})
+});
 
 
-
-router.post('/fairytales', function (req, res, next) {
-    new fairyTale(req.body.fairytales)
+router.post('/fairytales', (req, res, next) => {
+    new fairyTale(req.body.fairytalesСolection)
         .save()
-        .then(function (fairytales) {
-            res.json({fairytales})
+        .then(function (fairytalesСolection) {
+            res.json({fairytalesСolection})
         })
         .catch(next)
 });
