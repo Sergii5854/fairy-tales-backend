@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const fairyTaleSchema = new mongoose.Schema({
+const FairyTaleSchema = new mongoose.Schema({
   audioUrl: String,
   createTime: Number,
   id: Number,
@@ -12,4 +12,4 @@ const fairyTaleSchema = new mongoose.Schema({
   updated: Boolean
 });
 
-module.exports = mongoose.model('fairyTale', fairyTaleSchema);
+module.exports = mongoose.model('fairyTale', FairyTaleSchema);
