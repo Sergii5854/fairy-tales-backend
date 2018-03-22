@@ -16,6 +16,12 @@ app.use(function(req, res, next) {
 });
 
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.use('/api/v1', router);
 
 // error handling
@@ -38,8 +44,5 @@ app.use(function (err, req, res, next) {
     error: {}
   })
 });
-
-
-
 
 module.exports = app;
