@@ -11,7 +11,7 @@ const router = express.Router();
 // require('./recent-uploaded');
 
 router.get('/fairytales', (req, res, next) => {
-    fairyTaleList.find({})
+    fairyTale.find({})
         .limit(10)
         .then(function (fairytales) {
             res.json({fairytales})
