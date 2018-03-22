@@ -106,7 +106,7 @@ router.get('/folk/:id', (req, res, next) => {
 });
 // lullabies
 router.get('/lullabies', (req, res, next) => {
-    fairyTale.find({})
+    fairyTale
         .find({lullaby: true})
         .limit(10)
         .then(function (lullabiesFairyTales) {
