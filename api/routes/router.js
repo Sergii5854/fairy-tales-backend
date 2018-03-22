@@ -9,7 +9,6 @@ const router = express.Router();
 // require('./lullabies');
 // require('./recent-uploaded');
 
-
 router.get('/fairytales', (req, res, next) => {
     fairyTale.find({})
         .then(function (fairytales) {
