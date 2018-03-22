@@ -1,5 +1,6 @@
 const express = require('express');
 const fairyTale = require('./../model');
+const fairyTaleList = require('./../modelList');
 const router = express.Router();
 
 // require('./audio');
@@ -10,7 +11,7 @@ const router = express.Router();
 // require('./recent-uploaded');
 
 router.get('/fairytales', (req, res, next) => {
-    fairyTale.find({})
+    fairyTaleList.find({})
         .limit(10)
         .then(function (fairytales) {
             res.json({fairytales})
