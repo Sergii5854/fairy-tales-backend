@@ -11,6 +11,7 @@ const router = express.Router();
 
 router.get('/fairytales', (req, res, next) => {
     fairyTale.find({})
+        .limit(10)
         .then(function (fairytales) {
             res.json({fairytales})
         }).catch(next)
@@ -106,6 +107,8 @@ router.get('/folk/:id', (req, res, next) => {
 // lullabies
 router.get('/lullabies', (req, res, next) => {
     fairyTale.find({})
+        .find({lullaby: true})
+        .limit(10)
         .then(function (lullabiesFairyTales) {
             res.json({lullabiesFairyTales})
         }).catch(next)

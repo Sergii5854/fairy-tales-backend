@@ -37,6 +37,7 @@ app.use(function (error, req, res, next) {
   }
   next(error)
 });
+
 app.use(function (err, req, res, next) {
   res.status(err.status || 500)
   res.render('error', {
