@@ -18,14 +18,11 @@ router.get('/fairytales', (req, res, next) => {
 });
 
 router.get('/fairytales/:id', (req, res, next) => {
-    fairyTale.findById(req.params.id, (err, fairytales) => {
-            if (err) {
-                res.status(400).json(err)
-            }
-            res.status(200).json(fairytales)
-        })
-
-
+    let id = +req.params.id;
+    fairyTale.find({ id: id })
+        .then(function (fairytales) {
+        res.json({fairytales})
+    }).catch(next)
 });
 
 router.post('/fairytales', (req, res, next) => {
@@ -37,7 +34,7 @@ router.post('/fairytales', (req, res, next) => {
         .catch(next)
 });
 
-router.put('/fairytales/:id', function (req, res) {
+router.put('/fairytales/id', function (req, res) {
     fairyTale.findById(req.params.id, function (err, fairyTale) {
         fairyTale.audioUrl = req.body.fairyTale.audioUrl || fairyTale.audioUrl;
         fairyTale.createTime = req.body.fairyTale.createTime || fairyTale.createTime;
