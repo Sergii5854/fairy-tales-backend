@@ -18,6 +18,9 @@ router.get('/fairytales', (req, res, next) => {
         }).catch(next)
 });
 
+router.get('/fairytales/:id', (req, res, next) => {
+    res.json(req.id);
+});
 
 router.post('/fairytales', (req, res, next) => {
     new fairyTale(req.body.fairytale)
@@ -109,7 +112,6 @@ router.get('/folk/:id', (req, res, next) => {
 router.get('/lullabies', (req, res, next) => {
     fairyTale
         .find({lullaby: true})
-
         .then(function (lullabiesFairyTales) {
             res.json({lullabiesFairyTales})
         }).catch(next)
