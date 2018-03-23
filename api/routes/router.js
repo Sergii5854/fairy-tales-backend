@@ -12,14 +12,14 @@ const router = express.Router();
 
 router.get('/fairytales', (req, res, next) => {
     fairyTale.find({})
-
         .then(function (fairytales) {
             res.json({fairytales})
         }).catch(next)
 });
 
 router.get('/fairytales/:id', (req, res, next) => {
-    res.json(req.id);
+   alert('Request Id:', req.params.id);
+    next();
 });
 
 router.post('/fairytales', (req, res, next) => {
