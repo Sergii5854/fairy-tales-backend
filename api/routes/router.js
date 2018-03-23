@@ -19,16 +19,12 @@ router.get('/fairytales', (req, res, next) => {
 
 router.get('/fairytales/:id', (req, res, next) => {
     fairyTale.findById(req.params.id, (err, fairytales) => {
-        fairytales.text = req.body.fairytales.text || fairytales.text
-        fairytales.name = req.body.fairytales.name || fairytales.name
-        fairytales.audioUrl = req.body.fairytales.audioUrl || fairytales.audioUrl
-        fairytales.save((err, fairytales) => {
             if (err) {
                 res.status(400).json(err)
             }
             res.status(200).json(fairytales)
         })
-    })
+
 
 });
 
