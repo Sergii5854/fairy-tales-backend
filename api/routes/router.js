@@ -83,8 +83,7 @@ router.get('/audio-fairy-tales/:id', (req, res, next) => {
 
 //author
 router.get('/author', (req, res, next) => {
-    fairyTale
-        .find({author: ''})
+    fairyTale.find({})
         .then(function (authors) {
             res.json({authors})
         }).catch(next)
