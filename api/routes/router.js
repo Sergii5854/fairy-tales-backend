@@ -99,7 +99,8 @@ router.get('/author/:id', (req, res, next) => {
 //folk
 
 router.get('/folk', (req, res, next) => {
-    fairyTale.find({})
+    fairyTale
+        .find({!author})
         .then(function (folkFairyTales) {
             res.json({folkFairyTales})
         }).catch(next)
