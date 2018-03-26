@@ -67,7 +67,8 @@ router.delete('/fairytales/:id', function (req, res) {
 // audio-fairy-tales
 
 router.get('/audio-fairy-tales', (req, res, next) => {
-    fairyTale.find({})
+    fairyTale
+        .find({audioUrl: {$exists: true}})
         .then(function (audioFairyTales) {
             res.json({audioFairyTales})
         }).catch(next)
@@ -128,10 +129,5 @@ router.get('/lullabies/:id', (req, res, next) => {
             res.json({lullabiesFairyTales})
         }).catch(next)
 });
-
-
-
-
-
 
 module.exports = router
