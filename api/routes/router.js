@@ -84,7 +84,7 @@ router.get('/audio-fairy-tales/:id', (req, res, next) => {
 //author
 router.get('/author', (req, res, next) => {
     fairyTale
-        .find({ author: { $exists: true } })
+        .find({author: {$exists: true}})
         .then(function (authors) {
             res.json({authors})
         }).catch(next)
@@ -100,7 +100,8 @@ router.get('/author/:id', (req, res, next) => {
 //folk
 
 router.get('/folk', (req, res, next) => {
-    fairyTale.find({})
+    fairyTale
+        .find({author: {$exists: false}})
         .then(function (folkFairyTales) {
             res.json({folkFairyTales})
         }).catch(next)
