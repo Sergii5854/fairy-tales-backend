@@ -1,6 +1,10 @@
 const express = require('express');
-const fairyTale = require('./../model');
-const fairyTaleList = require('./../modelList');
+const fairyTale = require('./../models/fairyTale');
+const fairyTaleList = require('./../models/modelList');
+const User = require('./../models/user')
+const bcrypt = require('bcrypt')
+
+
 const router = express.Router();
 
 // require('./audio');
@@ -18,14 +22,11 @@ router.get('/fairytales', (req, res, next) => {
 });
 
 router.get('/fairytales/:id', (req, res, next) => {
-    fairyTale.findById(req.params.id, (err, fairytales) => {
-            if (err) {
-                res.status(400).json(err)
-            }
-            res.status(200).json(fairytales)
-        })
-
-
+    let id = +req.params.id;
+    fairyTale.find({ id: id })
+        .then(function (fairytales) {
+        res.json({fairytales})
+    }).catch(next)
 });
 
 router.post('/fairytales', (req, res, next) => {
@@ -37,7 +38,7 @@ router.post('/fairytales', (req, res, next) => {
         .catch(next)
 });
 
-router.get('/fairytales/:id', function (req, res) {
+router.put('/fairytales/id', function (req, res) {
     fairyTale.findById(req.params.id, function (err, fairyTale) {
         fairyTale.audioUrl = req.body.fairyTale.audioUrl || fairyTale.audioUrl;
         fairyTale.createTime = req.body.fairyTale.createTime || fairyTale.createTime;
@@ -48,6 +49,12 @@ router.get('/fairytales/:id', function (req, res) {
         fairyTale.updateTime = req.body.fairyTale.updateTime || fairyTale.updateTime;
         fairyTale.updated = req.body.fairyTale.updated || fairyTale.updated;
 
+        fairyTale.save(function (err, fairyTale) {
+            if (err) {
+                res.status(400).json(err)
+            }
+            res.status(200).json(fairyTale)
+        })
     })
 
 });
@@ -80,7 +87,8 @@ router.get('/audio-fairy-tales/:id', (req, res, next) => {
 
 //author
 router.get('/author', (req, res, next) => {
-    fairyTale.find({})
+    fairyTale
+        .find({ author: { $exists: true } })
         .then(function (authors) {
             res.json({authors})
         }).catch(next)
@@ -96,7 +104,8 @@ router.get('/author/:id', (req, res, next) => {
 //folk
 
 router.get('/folk', (req, res, next) => {
-    fairyTale.find({})
+    fairyTale
+        .find({ author: { $exists: false } })
         .then(function (folkFairyTales) {
             res.json({folkFairyTales})
         }).catch(next)
@@ -125,7 +134,50 @@ router.get('/lullabies/:id', (req, res, next) => {
 });
 
 
+router.get('/users', (req, res, next) => {
+  User.find()
+        .then(users => {
+          res.json({users})
+        })
+        .catch(next)
+})
 
+router.post('/login',
+    async function (req, res, next) {
+      if (!req.body.user.password || !req.body.user.email) {
+        res.json({'status': 404, 'message': 'Not Found.'})
+      }
+      let user = await User.findOne({email: req.body.user.email})
+        .then(user => user)
+
+      if (!user) {
+        res.json({'status': 404, 'message': 'Not Found.'})
+      }
+
+      bcrypt.compare(req.body.user.password, user.password, function (err, result) {
+        if (result === true) {
+          res.json({'user': {'_id': user._id, 'email': user.email, 'name': user.name}})
+        } else {
+          res.json({'status': 404, 'message': 'Not Found.'})
+        }
+      })
+    })
+
+router.post('/users', (req, res, next) => {
+  let data = req.body.user
+
+  bcrypt.genSalt(10, function (err, salt) {
+    bcrypt.hash(data.password, salt, function (err, hash) {
+      data.password = hash
+      new User(data)
+            .save()
+            .then(user => {
+              res.json({user})
+            })
+            .catch(next)
+    })
+  })
+})
 
 
 
