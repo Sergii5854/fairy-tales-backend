@@ -38,7 +38,7 @@ router.post('/fairytales', (req, res, next) => {
         .catch(next)
 });
 
-router.put('/fairytales/id', function (req, res) {
+router.put('/fairytales/:id', function (req, res) {
     fairyTale.findById(req.params.id, function (err, fairyTale) {
         fairyTale.audioUrl = req.body.fairyTale.audioUrl || fairyTale.audioUrl;
         fairyTale.createTime = req.body.fairyTale.createTime || fairyTale.createTime;
