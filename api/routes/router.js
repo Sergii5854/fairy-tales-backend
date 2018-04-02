@@ -1,6 +1,5 @@
 const express = require('express');
 const fairyTale = require('./../model');
-const fairyTaleList = require('./../modelList');
 const router = express.Router();
 
 // require('./audio');
