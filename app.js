@@ -3,7 +3,8 @@ const path = require('path')
 const app = express();
 
 const config = require('./config');
-const router = require('./api/routes/router');
+const fairytalesRouter = require('./api/fairytales/router');
+const usersRouter = require('./api/users/router');
 
 const db = require('./api/db');
 app.listen(config.port, function () {
@@ -22,8 +23,8 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-
-app.use('/api/v1', router);
+app.use('/api/v1', usersRouter);
+app.use('/api/v1', fairytalesRouter);
 
 // error handling
 app.use(function (req, res, next) {
