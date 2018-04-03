@@ -5,6 +5,7 @@ const app = express();
 const config = require('./config');
 const router = require('./api/routes/router');
 const user = require('./api/routes/user')
+const admin = require('./api/routes/admin')
 const bodyParser = require('body-parser');
 
 const db = require('./api/db');
@@ -27,6 +28,7 @@ app.use(bodyParser.json());
 
 app.use('/api/v1', router);
 app.use('/api/v1', user);
+app.use('/api/v1', admin);
 
 
 // error handling
