@@ -4,6 +4,7 @@ const app = express();
 
 const config = require('./config');
 const router = require('./api/routes/router');
+const user = require('./api/routes/user')
 const bodyParser = require('body-parser');
 
 const db = require('./api/db');
@@ -23,7 +24,10 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(bodyParser.json());
+
 app.use('/api/v1', router);
+app.use('/api/v1', user);
+
 
 // error handling
 app.use(function (req, res, next) {
