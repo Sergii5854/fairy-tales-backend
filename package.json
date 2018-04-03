@@ -12,8 +12,6 @@
   "dependencies": {
     "bcrypt": "^1.0.3",
     "express": "^4.14.0",
-    "firebase": "^3.6.4",
-    "firebase-admin": "^4.0.4",
     "fs": "*",
     "http": "0.0.0",
     "mongoose": "^5.0.4",
@@ -24,5 +22,5 @@
   "devDependencies": {
     "nodemon": "^1.14.12"
   },
-  "description": ""
+  "description": "fairy-tails"
 }
