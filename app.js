@@ -30,6 +30,10 @@ app.use('/api/v1', router);
 app.use('/api/v1', user);
 app.use('/api/v1', admin);
 
+app.route('/*').get(function(req, res) {
+    return res.sendFile(path.join(config.root, 'index.html'));
+});
+
 
 // error handling
 app.use(function (req, res, next) {
