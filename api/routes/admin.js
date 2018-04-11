@@ -9,6 +9,8 @@ const admin = express.Router();
 
 admin.get('/fairytales-admin', (req, res, next) => {
     fairyTale.find({})
+        .select("name")
+        .select("id")
         .then(function (fairytales) {
             res.json({fairytales})
         }).catch(next)
