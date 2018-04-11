@@ -65,6 +65,8 @@ router.delete('/fairytales/:id', function (req, res) {
 
 router.get('/audio-fairy-tales', (req, res, next) => {
     fairyTale.find({})
+        .select("name")
+        .select("id")
         .then(function (audioFairyTales) {
             res.json({audioFairyTales})
         }).catch(next)
@@ -82,6 +84,9 @@ router.get('/audio-fairy-tales/:id', (req, res, next) => {
 router.get('/author', (req, res, next) => {
     fairyTale
         .find({ author: { $exists: true } })
+        .select("name")
+        .select("id")
+        .select("author")
         .then(function (authors) {
             res.json({authors})
         }).catch(next)
@@ -99,6 +104,9 @@ router.get('/author/:id', (req, res, next) => {
 router.get('/folk', (req, res, next) => {
     fairyTale
         .find({ author: { $exists: false } })
+        .select("name")
+        .select("id")
+        .select("author")
         .then(function (folkFairyTales) {
             res.json({folkFairyTales})
         }).catch(next)
@@ -114,6 +122,9 @@ router.get('/folk/:id', (req, res, next) => {
 router.get('/lullabies', (req, res, next) => {
     fairyTale
         .find({lullaby: true})
+        .select("name")
+        .select("id")
+        .select("lullaby")
         .then(function (lullabiesFairyTales) {
             res.json({lullabiesFairyTales})
         }).catch(next)
