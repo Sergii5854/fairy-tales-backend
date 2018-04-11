@@ -1,18 +1,13 @@
 const express = require('express');
 const fairyTale = require('./../models/fairyTale');
-const fairytaleList = require('./../models/fairytaleList');
+const f = require('./../models/fairytaleList');
 
 const router = express.Router();
 
-// require('./audio');
-// require('./author');
-// require('./favorite');
-// require('./folk');
-// require('./lullabies');
-// require('./recent-uploaded');
-
 router.get('/fairytales', (req, res, next) => {
-    fairytaleList.find({})
+    fairyTale.find({})
+        .select("name")
+        .select("id")
         .then(function (fairytales) {
             res.json({fairytales})
         }).catch(next)
