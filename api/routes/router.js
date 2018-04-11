@@ -1,5 +1,6 @@
 const express = require('express');
 const fairyTale = require('./../models/fairyTale');
+const fairytaleList = require('./../models/fairytaleList');
 
 const router = express.Router();
 
@@ -11,7 +12,7 @@ const router = express.Router();
 // require('./recent-uploaded');
 
 router.get('/fairytales', (req, res, next) => {
-    fairyTale.find({})
+    fairytaleList.find({})
         .then(function (fairytales) {
             res.json({fairytales})
         }).catch(next)
